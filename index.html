@@ -22,6 +22,22 @@
         .card-shadow {
             box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 198, 41, 0.15);
         }
+        #app > header, #action-footer {
+            flex-shrink: 0;
+        }
+        #card-area, #swipe-card {
+            min-height: 0;
+        }
+        #swipe-card {
+            touch-action: pan-y;
+        }
+        #swipe-card > div:first-child {
+            flex-shrink: 0;
+        }
+        #swipe-card > div:last-child {
+            min-height: 0;
+            overscroll-behavior-y: contain;
+        }
         /* Falling peach blossoms animation */
         @keyframes fall {
             0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
@@ -135,7 +151,7 @@
                     <div class="flex items-center justify-between bg-[#1e1e26] p-3 rounded-2xl border border-white/5">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-black/50 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="images/profile-1.png" class="w-full h-full object-cover">
+                                <img src="Gabriel.JPG" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-white">Gabriel, 30</h4>
@@ -153,7 +169,7 @@
                     <div class="flex items-center justify-between bg-[#1e1e26] p-3 rounded-2xl border border-white/5">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-black/50 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="images/profile-2.png" class="w-full h-full object-cover">
+                                <img src="Leo.JPG" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-white">Leo, 28</h4>
@@ -171,7 +187,7 @@
                     <div class="flex items-center justify-between bg-[#1e1e26] p-3 rounded-2xl border border-white/5">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-black/50 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="images/profile-3.png" class="w-full h-full object-cover">
+                                <img src="Adrian.JPG" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-white">Adrian, 32</h4>
@@ -189,7 +205,7 @@
                     <div class="flex items-center justify-between bg-[#1e1e26] p-3 rounded-2xl border border-white/5">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-black/50 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="images/profile-4.png" class="w-full h-full object-cover">
+                                <img src="Mathieu.JPG" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-white">Mathieu, 31</h4>
@@ -207,7 +223,7 @@
                     <div class="flex items-center justify-between bg-[#1e1e26] p-3 rounded-2xl border border-white/5">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-black/50 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="images/profile-5.png" class="w-full h-full object-cover">
+                                <img src="Joseph.JPG" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-white">Joseph, 27</h4>
@@ -225,7 +241,7 @@
                     <div class="flex items-center justify-between bg-[#1e1e26] p-3 rounded-2xl border border-white/5">
                         <div class="flex items-center gap-3">
                             <div class="w-12 h-12 rounded-xl bg-black/50 border border-white/10 overflow-hidden flex items-center justify-center shrink-0">
-                                <img src="images/profile-6.jpg" class="w-full h-full object-cover">
+                                <img src="Guillaume.JPG" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-white">Guillaume, 35</h4>
@@ -246,7 +262,7 @@
     <main id="card-area" class="flex-1 relative p-4 flex items-center justify-center overflow-hidden">
                     <div id="swipe-card" class="w-full h-full bg-[#1c1c22] rounded-3xl overflow-hidden card-shadow relative flex flex-col select-none cursor-grab active:cursor-grabbing border border-[#2d2d3a]">
                         <div class="relative w-full h-[65%] bg-black overflow-hidden">
-                            <img id="profile-img" src="images/profile-1.png" alt="Gabriel" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/400x600/1a1a1a/ffffff?text=Gabriel'">
+                            <img id="profile-img" src="Gabriel.JPG" alt="Gabriel" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/400x600/1a1a1a/ffffff?text=Gabriel'">
                             
                             <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/10 z-20">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -342,14 +358,22 @@
         </div>
 
 
-        <!-- ================= 4. END SCREEN ================= -->
-        <div id="end-screen" class="absolute inset-0 bg-[#0d0d11] z-40 flex flex-col items-center justify-center p-6 text-center opacity-0 pointer-events-none transition-opacity duration-500">
-            <div class="w-20 h-20 rounded-3xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-rose-500 flex items-center justify-center text-white mb-6 shadow-xl shadow-pink-500/20 animate-pulse">
-                <i data-lucide="peach" class="w-10 h-10"></i>
+        <!-- ================= 4. LIKED PROFILES SUMMARY ================= -->
+        <div id="end-screen" class="absolute inset-0 bg-[#0d0d11] z-40 flex flex-col p-5 text-center opacity-0 pointer-events-none transition-opacity duration-500">
+            <div class="shrink-0 pt-3 pb-5">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-rose-500 flex items-center justify-center text-white mx-auto mb-4 shadow-lg shadow-pink-500/20">
+                    <i data-lucide="heart" class="w-7 h-7 fill-white"></i>
+                </div>
+                <p class="text-[10px] uppercase tracking-widest font-bold text-pink-400 mb-2">Your Peach Matches</p>
+                <h2 class="text-3xl font-extrabold text-white mb-2 peach-glow">你的心动名单</h2>
+                <p class="text-gray-400 text-xs mb-4">本轮桃花已全部看完，珍藏每一次心动。</p>
+                <span class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full bg-yellow-400/10 text-yellow-400 border border-yellow-400/20">
+                    <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+                    <span>已喜欢</span><span id="liked-count" aria-live="polite">0 / 6</span>
+                </span>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">满意你的桃花吗？</h2>
-            <p class="text-gray-400 text-sm max-w-xs mb-8">所有优质桃花缘分已全部展示完毕。愿你今日桃花朵朵开，收获完美羁绊！</p>
-            <button onclick="app.restart()" class="w-full max-w-xs py-4 rounded-2xl bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-extrabold text-lg shadow-lg shadow-yellow-500/20 active:scale-95 transition-all flex items-center justify-center gap-2">
+            <div id="liked-profiles-list" class="flex-1 min-h-0 overflow-y-auto space-y-3 text-left pr-1" style="overscroll-behavior-y: contain;" aria-label="Liked profiles"></div>
+            <button onclick="app.restart()" class="shrink-0 w-full mt-5 py-4 rounded-2xl bg-gradient-to-r from-yellow-400 to-pink-500 text-black font-extrabold text-lg shadow-lg shadow-yellow-500/20 active:scale-95 transition-all flex items-center justify-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="rotate-ccw" aria-hidden="true" class="lucide lucide-rotate-ccw w-5 h-5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
                 <span>重新测算桃花缘</span>
             </button>
@@ -371,7 +395,7 @@
                 lookingFor: "Meaningful dates, genuine connection, open to chemistry",
                 bio: "University philosophy professor. Curious mind, calm personality. Love getting lost in books, discovering good restaurants, and having deep conversations over wine.",
                 tags: ["Philosophy", "Reading", "Foodie", "Wine", "Art", "Deep Talks"],
-                photo: ""
+                photo: "Gabriel.JPG"
             },
             {
                 id: 2,
@@ -383,7 +407,7 @@
                 lookingFor: "Dates, serious connection, open to whatever clicks",
                 bio: "Asset manager. Bold and straightforward. Love wandering cities, travelling. Dance and gym whenever possible.",
                 tags: ["Travel", "Dancing", "Fitness", "Music", "Shopping"],
-                photo: ""
+                photo: "Leo.JPG"
             },
             {
                 id: 3,
@@ -395,7 +419,7 @@
                 lookingFor: "Genuine chemistry, good conversations, and something meaningful if it feels right.",
                 bio: "Strategy consultant by day, curious explorer by nature. A little spontaneous. Equally happy discovering a hidden wine bar or cooking dinner with jazz.",
                 tags: ["Travel", "Architecture", "Jazz", "Cooking", "Photography"],
-                photo: ""
+                photo: "Adrian.JPG"
             },
             {
                 id: 4,
@@ -407,7 +431,7 @@
                 lookingFor: "new chapter",
                 bio: "Producer. Always curious, always in my way. The right coffee shop generate the right chemistry.",
                 tags: ["Photographer", "Coffee"],
-                photo: ""
+                photo: "Mathieu.JPG"
             },
             {
                 id: 5,
@@ -419,7 +443,7 @@
                 lookingFor: "the one",
                 bio: "Professional gym nerd. Looking forward to GTA.",
                 tags: ["Gaming", "Gym", "Technology"],
-                photo: ""
+                photo: "Joseph.JPG"
             },
             {
                 id: 6,
@@ -431,7 +455,7 @@
                 lookingFor: "Long relationship",
                 bio: "Sound engineer. Cat heals everything. You can decide for the first date. I'm chill, don't worry.",
                 tags: ["Reading", "Beer", "Art", "Travel"],
-                photo: ""
+                photo: "Guillaume.JPG"
             }
         ];
 
@@ -439,8 +463,10 @@
             constructor() {
                 this.currentIndex = 0;
                 this.isTransitioning = false;
+                this.likedProfileIds = new Set();
                 this.tempPhotos = profiles.map(p => p.photo || "");
                 this.initPetals();
+                this.initDragAndDrop();
             }
 
             openAssignModal() {
@@ -549,6 +575,7 @@
             }
 
             renderCard() {
+                this.dragController?.abort();
                 const area = document.getElementById('card-area');
                 document.getElementById('counter-badge').innerText = `${Math.min(this.currentIndex + 1, profiles.length)} / ${profiles.length}`;
 
@@ -607,20 +634,36 @@
             }
 
             initDragAndDrop() {
+                this.dragController?.abort();
                 const card = document.getElementById('swipe-card');
                 if (!card) return;
-                let startX = 0, currentX = 0, isDragging = false;
+                this.dragController = new AbortController();
+                const signal = this.dragController.signal;
+                let startX = 0, startY = 0, currentX = 0, isDragging = false;
+                let direction = null;
 
                 const onStart = (e) => {
                     if (this.isTransitioning) return;
                     isDragging = true;
-                    startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                    const point = e.type.includes('mouse') ? e : e.touches[0];
+                    startX = point.clientX;
+                    startY = point.clientY;
+                    currentX = 0;
+                    direction = null;
                     card.style.transition = 'none';
                 };
 
                 const onMove = (e) => {
                     if (!isDragging) return;
-                    currentX = (e.type.includes('mouse') ? e.clientX : e.touches[0].clientX) - startX;
+                    const point = e.type.includes('mouse') ? e : e.touches[0];
+                    const deltaX = point.clientX - startX;
+                    const deltaY = point.clientY - startY;
+                    if (!direction) {
+                        if (Math.max(Math.abs(deltaX), Math.abs(deltaY)) < 10) return;
+                        direction = Math.abs(deltaX) > Math.abs(deltaY) ? 'horizontal' : 'vertical';
+                    }
+                    if (direction === 'vertical') return;
+                    currentX = deltaX;
                     const rotate = currentX * 0.05;
                     card.style.transform = `translateX(${currentX}px) rotate(${rotate}deg)`;
                 };
@@ -640,18 +683,28 @@
                     currentX = 0;
                 };
 
-                card.addEventListener('mousedown', onStart);
-                window.addEventListener('mousemove', onMove);
-                window.addEventListener('mouseup', onEnd);
+                const onCancel = () => {
+                    isDragging = false;
+                    currentX = 0;
+                    direction = null;
+                    card.style.transition = 'transform 0.25s ease';
+                    card.style.transform = 'translateX(0) rotate(0deg)';
+                };
 
-                card.addEventListener('touchstart', onStart, { passive: true });
-                window.addEventListener('touchmove', onMove, { passive: true });
-                window.addEventListener('touchend', onEnd);
+                card.addEventListener('mousedown', onStart, { signal });
+                window.addEventListener('mousemove', onMove, { signal });
+                window.addEventListener('mouseup', onEnd, { signal });
+
+                card.addEventListener('touchstart', onStart, { passive: true, signal });
+                window.addEventListener('touchmove', onMove, { passive: true, signal });
+                window.addEventListener('touchend', onEnd, { signal });
+                window.addEventListener('touchcancel', onCancel, { signal });
             }
 
             handleLike() {
-                if (this.isTransitioning) return;
+                if (this.isTransitioning || !profiles[this.currentIndex]) return;
                 this.isTransitioning = true;
+                this.likedProfileIds.add(profiles[this.currentIndex].id);
                 const card = document.getElementById('swipe-card');
                 if (card) {
                     card.style.transition = 'transform 0.3s ease';
@@ -683,7 +736,6 @@
                 const avatarSrc = profile.photo || '';
                 document.getElementById('match-target-name').innerText = profile.name;
                 document.getElementById('match-target-avatar').innerHTML = `<img src="${avatarSrc}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1a1a1a/ffffff?text=Match'">`;
-                document.getElementById('match-target-desc').innerHTML = `你与 <span class="text-yellow-400 font-bold">${profile.name}</span> 相互倾心，桃花磁场完美契合！`;
 
                 const modal = document.getElementById('match-modal');
                 modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -713,6 +765,30 @@
             showEndScreen() {
                 document.getElementById('card-area').innerHTML = '';
                 document.getElementById('action-footer').style.display = 'none';
+                const likedProfiles = profiles.filter(profile => this.likedProfileIds.has(profile.id));
+                document.getElementById('liked-count').innerText = `${likedProfiles.length} / ${profiles.length}`;
+                const list = document.getElementById('liked-profiles-list');
+                list.innerHTML = likedProfiles.length ? likedProfiles.map(profile => `
+                    <article class="flex items-center gap-4 p-3 rounded-2xl bg-[#1a1a22] border border-pink-500/20 shadow-lg">
+                        <img src="${profile.photo}" alt="${profile.name}" class="w-20 h-24 rounded-xl object-cover shrink-0 border border-white/10">
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-lg font-extrabold text-white mb-1">${profile.name} <span class="text-sm font-normal text-gray-400">${profile.age}</span></h3>
+                            <p class="text-xs text-yellow-400 font-semibold leading-relaxed">${profile.occupation}</p>
+                            <p class="text-[11px] text-gray-400 mt-1">${profile.location}</p>
+                            <span class="inline-flex items-center gap-1 mt-2 text-[10px] font-bold text-pink-300 bg-pink-500/10 px-2 py-1 rounded-full">
+                                <i data-lucide="heart" class="w-3 h-3 fill-current"></i> 已心动
+                            </span>
+                        </div>
+                    </article>
+                `).join('') : `
+                    <div class="h-full min-h-[180px] flex flex-col items-center justify-center text-center rounded-3xl bg-[#1a1a22] border border-white/5 p-6">
+                        <i data-lucide="heart" class="w-10 h-10 text-pink-400 mb-4"></i>
+                        <h3 class="text-lg font-bold text-white mb-2">还没有心动的人</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">不用着急，属于你的桃花值得等待。<br>再探索一次，也许会有新的心动。</p>
+                    </div>
+                `;
+                list.scrollTop = 0;
+                lucide.createIcons();
                 const endScreen = document.getElementById('end-screen');
                 endScreen.classList.remove('opacity-0', 'pointer-events-none');
             }
@@ -720,6 +796,7 @@
             restart() {
                 this.currentIndex = 0;
                 this.isTransitioning = false;
+                this.likedProfileIds.clear();
                 document.getElementById('action-footer').style.display = 'flex';
                 const endScreen = document.getElementById('end-screen');
                 endScreen.classList.add('opacity-0', 'pointer-events-none');
